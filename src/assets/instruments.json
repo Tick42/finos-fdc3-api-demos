@@ -1,0 +1,74 @@
+[
+  {
+    "ric": "VOD:LN",
+    "description": "VODAFONE GROUP PLC"
+  },
+  {
+    "ric": "BARC:LN",
+    "description": "BARCLAYS PLC"
+  },
+  {
+    "ric": "BMW:GR",
+    "description": "BAYERISCHE MOTOREN WERKE AG"
+  },
+  {
+    "ric": "AAL:LN",
+    "description": "ANGLO AMERICAN PLC"
+  },
+  {
+    "ric": "GOOGL:US",
+    "description": "Google inc"
+  },
+  {
+    "ric": "MSFT:US",
+    "description": "Microsoft Corporation"
+  },
+  {
+    "ric": "TEAM:US",
+    "description": "Atlassian Corporation PLC"
+  },
+  {
+    "ric": "CRM:US",
+    "description": "salesforce.com, inc"
+  },
+  {
+    "ric": "JPM:US",
+    "description": "JPMorgan Chase & Co."
+  },
+  {
+    "ric": "FB:US",
+    "description": "Facebook, Inc. Common Stock"
+  },
+  {
+    "ric": "AMZN:US",
+    "description": "Amazon.com, Inc"
+  },
+  {
+    "ric": "AAPL:US",
+    "description": "Apple Inc."
+  },
+  {
+    "ric": "BABA:US",
+    "description": "Alibaba Group Holding Ltd"
+  },
+  {
+    "ric": "TICK:LN",
+    "description": "Tick42 Ltd."
+  },
+  {
+    "ric": "NTES:US",
+    "description": "NetEase"
+  },
+  {
+    "ric": "KHC:US",
+    "description": "Kraft Heinz Co"
+  },
+  {
+    "ric": "NFLX:US",
+    "description": "NETFLIX"
+  },
+  {
+    "ric": "TSCO:LN",
+    "description": "TESCO PLC"
+  }
+]
