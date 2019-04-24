@@ -54,7 +54,7 @@
     "typescript": "~3.2.2"
   },
   "optionalDependencies": {
-    "com-glue42-finos-fdc3-api-impl": "^1.0.2",
+    "com-glue42-finos-fdc3-api-impl": "^1.0.3",
     "glue-interop-api-impl": "^1.1.4"
   }
 }
