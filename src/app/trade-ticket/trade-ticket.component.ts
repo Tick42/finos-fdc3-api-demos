@@ -22,7 +22,7 @@ const desktopJS = require('@morgan-stanley/desktopjs');
 
 import {InitializeService} from '../initialize.servise';
 
-import {IContext, IInstrument, IMethodImplementation} from '../app';
+import {IApplication, IContext, IInstrument, IMethodImplementation} from '../app';
 import {CONSTANTS} from '../app.constants';
 
 @Component({
@@ -39,6 +39,7 @@ export class TradeTicketComponent implements OnInit, OnDestroy {
   private instrumentPrice: number;
   private container: any;
   private fdc3ApiImpl;
+  private fdc3PlatformApi: any;
   private subscriptions: Subscription[] = [];
 
   constructor(private initializeService: InitializeService) {
@@ -67,6 +68,7 @@ export class TradeTicketComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.initializeService.fdc3ApiImpl.subscribe((fdc3ApiImpl: any) => {
       this.loading = false;
       this.fdc3ApiImpl = fdc3ApiImpl;
+      this.fdc3PlatformApi = this.fdc3ApiImpl.platforms[0].platformApi;
       this.addContextListener();
       this.registerShowTradeTicketMethod();
     }));
@@ -80,11 +82,13 @@ export class TradeTicketComponent implements OnInit, OnDestroy {
     this.fdc3ApiImpl.addContextListener((context: IContext) => {
       if (context.type === 'close-window') {
         if (this.isGlueWindow) {
-          const args: {application: string} = {application: this.initializeService.getApplicationName()};
-          this.fdc3ApiImpl.platforms[0].platformApi.invoke('Fdc3.Glue42.StopApplication', args)
+          const args: {application: IApplication} = {application: this.initializeService.getApplication()};
+          this.fdc3PlatformApi.invoke('Fdc3.Glue42.StopApplication', args)
             .catch((error) => {
               console.error(error);
             });
+
+
         } else {
           this.container.getCurrentWindow().close();
         }
@@ -103,7 +107,7 @@ export class TradeTicketComponent implements OnInit, OnDestroy {
         return Promise.resolve(this.setInstrument(context.id));
       }
     };
-    this.fdc3ApiImpl.platforms[0].platformApi.register(methodImplementation);
+    this.fdc3PlatformApi.register(methodImplementation);
   }
 
   private setInstrument(instrument: IInstrument): void {

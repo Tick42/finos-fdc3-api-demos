@@ -1,74 +1,42 @@
 [
   {
-    "ric": "VOD:LN",
-    "description": "VODAFONE GROUP PLC"
+    "ric": "TWTR.K",
+    "description": "Twitter Inc"
   },
   {
-    "ric": "BARC:LN",
-    "description": "BARCLAYS PLC"
+    "ric": "ANTM.K",
+    "description": "Anthem Inc"
   },
   {
-    "ric": "BMW:GR",
-    "description": "BAYERISCHE MOTOREN WERKE AG"
+    "ric": "BARC.L",
+    "description": "Barclays PLC"
   },
   {
-    "ric": "AAL:LN",
-    "description": "ANGLO AMERICAN PLC"
+    "ric": "BXP",
+    "description": "Boston Properties Inc"
   },
   {
-    "ric": "GOOGL:US",
-    "description": "Google inc"
+    "ric": "CGC.AX",
+    "description": "Costa Group Holdings Ltd"
   },
   {
-    "ric": "MSFT:US",
-    "description": "Microsoft Corporation"
+    "ric": "CBS",
+    "description": "CBS Corp"
   },
   {
-    "ric": "TEAM:US",
-    "description": "Atlassian Corporation PLC"
+    "ric": "CNA.L",
+    "description": "Centrica PLC"
   },
   {
-    "ric": "CRM:US",
-    "description": "salesforce.com, inc"
+    "ric": "LNG",
+    "description": "Liquefied natural gas"
   },
   {
-    "ric": "JPM:US",
-    "description": "JPMorgan Chase & Co."
+    "ric": "1113.HK",
+    "description": "CK Asset Holdings Ltd"
   },
   {
-    "ric": "FB:US",
-    "description": "Facebook, Inc. Common Stock"
-  },
-  {
-    "ric": "AMZN:US",
-    "description": "Amazon.com, Inc"
-  },
-  {
-    "ric": "AAPL:US",
-    "description": "Apple Inc."
-  },
-  {
-    "ric": "BABA:US",
-    "description": "Alibaba Group Holding Ltd"
-  },
-  {
-    "ric": "TICK:LN",
-    "description": "Tick42 Ltd."
-  },
-  {
-    "ric": "NTES:US",
-    "description": "NetEase"
-  },
-  {
-    "ric": "KHC:US",
-    "description": "Kraft Heinz Co"
-  },
-  {
-    "ric": "NFLX:US",
-    "description": "NETFLIX"
-  },
-  {
-    "ric": "TSCO:LN",
-    "description": "TESCO PLC"
+    "ric": "DELL.K",
+    "description": "Dell Technologies Inc"
   }
 ]

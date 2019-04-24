@@ -17,9 +17,11 @@
 
 export const CONSTANTS = {
   intents: {
-    instrumentPriceChart: 'Show Price Chart',
-    tradeTicket: 'Show Trade Ticket'
+    instrumentPriceChart: 'show-price-chart',
+    tradeTicket: 'show-trade-ticket',
+    news: 'show-news'
   },
+  eikonManagerModuleApp: 'eikon-manager-module',
   windowUrls: {
     instrumentPriceChart: 'http://localhost:4200/instrument-price-chart#1',
     tradeTicket: 'http://localhost:4200/trade-ticket'

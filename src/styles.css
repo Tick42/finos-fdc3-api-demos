@@ -29,6 +29,10 @@
   height: calc(100vh - 60px);
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* Custom scrollbar - start */
 
 ::-webkit-scrollbar-track {

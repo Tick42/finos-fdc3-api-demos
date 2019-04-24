@@ -25,9 +25,7 @@
     "@morgan-stanley/desktopjs": "^3.1.0",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "chart.js": "^2.8.0",
-    "com-glue42-finos-fdc3-api-impl": "^1.0.0",
     "core-js": "^2.5.4",
-    "glue-interop-api-impl": "^1.1.2",
     "ngx-bootstrap": "^4.0.0",
     "ngx-loading": "^3.0.1",
     "rxjs": "~6.3.3",
@@ -54,5 +52,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "optionalDependencies": {
+    "com-glue42-finos-fdc3-api-impl": "^1.0.2",
+    "glue-interop-api-impl": "^1.1.4"
   }
 }

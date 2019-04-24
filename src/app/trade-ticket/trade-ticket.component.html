@@ -22,8 +22,8 @@ limitations under the License. -->
             <div class="col-3">
               <input class="form-control" type="number" name="quantity" [(ngModel)]="quantity" min="1" (change)="calculatePrice($event)">
             </div>
-            <div class="col-3">
-              / <label class="col-sm-2 col-form-label">{{finalInstrumentPrice | currency}}</label>
+            <div class="col-9">
+              / <label class="col-form-label">{{finalInstrumentPrice | currency}}</label>
             </div>
           </div>
         </fieldset>

@@ -18,6 +18,7 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subject} from 'rxjs/index';
+import {IApplication} from './app';
 
 const InteropPlatform = require('glue-interop-api-impl');
 const Fdc3Impl = require('com-glue42-finos-fdc3-api-impl');
@@ -59,20 +60,30 @@ export class InitializeService {
     const currentUrl: string = location.href.split('/')[location.href.split('/').length - 1];
     switch (currentUrl) {
       case 'instrument-list':
-        return this.isGlueWindow ? 'instrument-list-glue42' : 'instrument-list-web-glue42';
+        return this.isGlueWindow ? 'instrument-list-glue42' : 'instrument-list-web';
         break;
       case 'instrument-price-chart':
-        return this.isGlueWindow ? 'instrument-price-chart-main-glue42' : 'instrument-price-chart-main-glue42';
+        return this.isGlueWindow ? 'instrument-price-chart-main-glue42' : 'instrument-price-chart-main-web';
         break;
       case 'instrument-price-chart#1':
-        return this.isGlueWindow ? 'instrument-price-chart-glue42' : 'instrument-price-chart-web-glue42';
+        return this.isGlueWindow ? 'instrument-price-chart-glue42' : 'instrument-price-chart-web';
         break;
       case 'trade-ticket':
-        return this.isGlueWindow ? 'trade-ticket-glue42' : 'trade-ticket-web-glue42';
+        return this.isGlueWindow ? 'trade-ticket-glue42' : 'trade-ticket-web';
         break;
       default:
         return 'fdc3-demo-app';
     }
+  }
+
+  public  getApplication(): IApplication {
+    const appName: string = this.getApplicationName();
+    return {
+      appId: appName,
+      name: appName,
+      manifest: '',
+      manifestType: ''
+    };
   }
 
   private setLoginDetails(): void {

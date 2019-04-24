@@ -21,7 +21,7 @@ import {Chart} from 'chart.js';
 
 import {InitializeService} from '../initialize.servise';
 
-import {IContext, IInstrument, IMethodImplementation} from '../app';
+import {IApplication, IContext, IInstrument, IMethodImplementation} from '../app';
 import {CONSTANTS} from '../app.constants';
 
 const desktopJS = require('@morgan-stanley/desktopjs');
@@ -40,6 +40,7 @@ export class InstrumentPriceChartComponent implements OnInit, OnDestroy {
   public isMainChart: boolean;
   private isGlueWindow: boolean;
   private fdc3ApiImpl;
+  private fdc3PlatformApi: any;
   private container: any;
   private chartData: any[] = chartData;
   private years: string[] = [];
@@ -65,6 +66,7 @@ export class InstrumentPriceChartComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.initializeService.fdc3ApiImpl.subscribe((fdc3ApiImpl: any) => {
       this.loading = false;
       this.fdc3ApiImpl = fdc3ApiImpl;
+      this.fdc3PlatformApi = this.fdc3ApiImpl.platforms[0].platformApi;
       this.addContextListener();
       if (!this.isMainChart) {
         this.registerShowChartMethod();
@@ -80,15 +82,15 @@ export class InstrumentPriceChartComponent implements OnInit, OnDestroy {
     this.fdc3ApiImpl.addContextListener((context: IContext) => {
       if (context.type === 'close-window') {
         if (this.isGlueWindow) {
-          const args: {application: string} = {application: this.initializeService.getApplicationName()};
-          this.fdc3ApiImpl.platforms[0].platformApi.invoke('Fdc3.Glue42.StopApplication', args)
+          const args: {application: IApplication} = {application: this.initializeService.getApplication()};
+          this.fdc3PlatformApi.invoke('Fdc3.Glue42.StopApplication', args)
             .catch((error) => {
               console.error(error);
             });
         } else {
           this.container.getCurrentWindow().close();
         }
-      } else if (context.type === 'instrument' && this.isMainChart) {
+      } else if (context.type === 'fdc3.instrument' && this.isMainChart) {
         this.updateChart(context.id);
       }
     });
@@ -151,6 +153,6 @@ export class InstrumentPriceChartComponent implements OnInit, OnDestroy {
         return Promise.resolve(this.updateChart(context.id));
       }
     };
-    this.fdc3ApiImpl.platforms[0].platformApi.register(methodImplementation);
+    this.fdc3PlatformApi.register(methodImplementation);
   }
 }

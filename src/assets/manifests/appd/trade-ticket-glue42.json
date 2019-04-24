@@ -1,0 +1,29 @@
+{
+  "appId": "trade-ticket-glue42",
+  "name": "trade-ticket-glue42",
+  "version": "1.0.0",
+  "title": "Glue42 Trade Ticket",
+  "tooltip": "Glue42 Trade Ticket",
+  "description": "Glue42 Trade Ticket",
+  "images": [],
+  "publisher": "Glue42",
+  "icons": [
+    {
+      "icon": "../resources/icons/glue42.png"
+    }
+  ],
+  "customConfig": [
+    {
+	  "name": "showInToolbar",
+	  "value": "false"
+    }
+  ],
+  "intents": [
+    {
+      "name": "show-trade-ticket",
+      "displayName": "Show Trade Ticket"
+    }
+  ],
+  "manifestType": "org.finos.fdc3.demo.host",
+  "manifest": "{\"type\":\"host\",\"url\":\"http://localhost:4200/trade-ticket\"}"
+}

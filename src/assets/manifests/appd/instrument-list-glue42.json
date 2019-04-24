@@ -1,0 +1,28 @@
+{
+  "appId": "instrument-list-glue42",
+  "name": "instrument-list-glue42",
+  "version": "1.0.0",
+  "title": "Glue42 Instrument List",
+  "tooltip": "Glue42 Instrument List",
+  "description": "Glue42 Instrument List",
+  "images": [],
+  "publisher": "Glue42",
+  "icons": [
+    {
+      "icon": "../resources/icons/glue42.png"
+    }
+  ],
+  "customConfig": [
+	{
+	  "name": "showInToolbar",
+	  "value": "true"
+	}
+  ],
+  "intents": [
+	{
+      "name": "test"
+    }
+  ],
+  "manifestType": "org.finos.fdc3.demo.host",
+  "manifest": "{\"type\":\"host\",\"url\":\"http://localhost:4200/instrument-list\"}"
+}

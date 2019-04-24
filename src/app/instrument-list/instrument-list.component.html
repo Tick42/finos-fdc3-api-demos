@@ -25,14 +25,16 @@ limitations under the License. -->
         </button>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
           <div *ngFor="let intent of intents">
-            <li role="menuitem" class="pl-2" >{{intent.intent}}</li>
-            <li class="divider dropdown-divider"></li>
-            <div *ngFor="let app of intent.applications">
-              <li role="menuitem">
-                <a class="dropdown-item" (click)="raiseIntent(intent.intent, instrument, app)">{{app}}</a>
-              </li>
+            <div *ngIf="intent.show">
+              <li role="menuitem" class="pl-2" >{{intent.intent.displayName}}</li>
+              <li class="divider dropdown-divider"></li>
+              <div *ngFor="let app of intent.apps">
+                <li class="pointer" role="menuitem" *ngIf="app.show">
+                  <a class="dropdown-item" (click)="raiseIntent(intent.intent.name, instrument, app)">{{app.title}}</a>
+                </li>
+              </div>
+              <li class="divider dropdown-divider"></li>
             </div>
-            <li class="divider dropdown-divider"></li>
           </div>
         </ul>
       </div>

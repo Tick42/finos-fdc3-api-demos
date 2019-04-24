@@ -16,8 +16,12 @@
  */
 
 export interface IIntent {
-  intent: string;
-  applications: string[];
+  intent: {
+    name: string;
+    displayName: string;
+  };
+  apps: IApplication[];
+  show?: boolean;
 }
 
 export interface IInstrument {
@@ -36,20 +40,26 @@ export interface IMethodImplementation {
   onInvoke: (args: any) => Promise<any>;
 }
 
-export interface IIntent {
-  intent: string;
-  applications: string[];
+export interface IListOfWindows {
+  [key: string]: IWindow;
 }
 
-export interface IListOfWindows {
-  [key: string]: {
-    intent: string;
-    isOpened: boolean;
-    isWeb: boolean;
-  };
+export interface IWindow {
+  intent: string;
+  isOpened: boolean;
+  isWeb: boolean;
 }
 
 interface IMethodIntent {
   name: string;
   contexts?: string;
+}
+
+export interface IApplication {
+  appId: string;
+  name: string;
+  manifest: string;
+  manifestType: string;
+  title?: string;
+  show?: boolean;
 }
